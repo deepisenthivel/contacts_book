@@ -1,0 +1,44 @@
+<h1>Contacts Editing</h1>
+<%= form_for :contact, url: contact_path(@contact), method: :patch do |c| %>
+  <% if @contact.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@contact.errors.count, "error") %>Found some errors!! </h2>
+    <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+<p>
+	<%= c.label :first_name %>
+	<%= c.text_field :first_name %>
+</p>
+<p>
+	<%= c.label :last_name %>
+	<%= c.text_field :last_name %>
+</p>
+<p>
+	<%= c.label :email_id %>
+	<%= c.text_field :email_id %>
+</p>
+<p>
+	<%= c.label :mobile_no %>
+	<%= c.text_field :mobile_no %>
+</p>
+<p>
+	<%= c.label :address %>
+	<%= c.text_area :address %>
+</p>
+<p>
+<%= c.label :NewPhoto %><br>
+
+ <%= c.file_field :photo %>
+</p>
+<p>
+	<%= c.submit %>
+</p>
+<% end %>
+ 
+<%= link_to 'Back', contacts_path %>
+
