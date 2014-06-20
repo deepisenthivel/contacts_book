@@ -18,7 +18,7 @@
   <td><%= contact.email_id %></td>
   <td><%= contact.mobile_no %></td>
   <td><%= contact.address %></td>
-  <td><img src=<%= contact.photo %> /></td>
+  <td><img src="/data/<%= contact.photo %>" width="80" height="100"/></td>
   <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
   <td><%= link_to 'show', contact_path(contact) %></td>
 <td><%= link_to 'Destroy', contact_path(contact),
